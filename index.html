@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&family=League+Spartan:wght@100..900&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+ <div class="container">
+  <div class="header">
+    <div class="logo"><img src="./img/logo.png" alt=""></div>
+    <nav>
+      <ul>
+        <li><a href="#">Nos vélos</a></li>
+        <li><a href="#">Prix</a></li>
+        <li><a href="#">Composant</a></li>
+        <li><a href="#">Photos</a></li>
+      </ul>
+    </nav>
+    <div class="menu">
+      <img src="./img/menu.png" alt="">
+    </div>
+  </div>
+  <div class="section">
+    <div class="wrapper">
+      <div class="wrap">
+        <div class="img">
+          <img src="./img/n1.png" alt="" class="headimg">
+        </div>
+      </div>
+      <div class="slidebar">
+        <ul id="Slideimg">
+          <li class="btn">
+            <img src="./img/n2.png" alt="" onclick="imgSlider('./img/n2.png')">
+          </li>
+          <li class="btn active">
+            <img src="./img/n1.png" alt="" onclick="imgSlider('./img/n1.png')">
+          </li><li class="btn">
+            <img src="./img/n3.png" alt="" onclick="imgSlider('./img/n3.png')">
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="txt">
+      <div>
+        <h1>BE A RIDER </h1>
+        <p>
+          Chez RYZR, chaque trajet est une ascension.
+Nos vélos sont faits pour ceux qui veulent aller plus haut, plus loin, plus librement.
+Ressens la route, défie le vent, et laisse-toi porter par ton élan.
+
+RYZR. En mouvement, toujours.
+        </p>
+        <a href="#">Cliquez pour rejoindre l'aventure</a>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="./script.js"></script>
+    <script>
+      // image slide 
+      function imgSlider(e) {
+        document.querySelector(".headimg").src = e;
+      }
+      // active class
+      var Slideimg =document.getElementById("Slideimg");
+      var btns = document.getElementsByClassName("btn");
+      for (var i =0; i <btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          this.className += "active";
+        });
+      }
+    </script>
+  </body>
+</html>
